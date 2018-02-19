@@ -18,6 +18,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Xpf-mD-pUK">
+                                <rect key="frame" x="16" y="151" width="343" height="496"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Dnf-1H-2vj" appends="YES" id="KEb-Hq-MTZ"/>
+                                </connections>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fb7-cc-JD8">
                                 <rect key="frame" x="16" y="44" width="343" height="96.5"/>
                                 <subviews>
@@ -49,7 +57,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fb7-cc-JD8" secondAttribute="trailing" constant="16" id="HP1-vA-iGo"/>
-                            <constraint firstItem="fb7-cc-JD8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="I2b-qA-pau"/>
+                            <constraint firstItem="fb7-cc-JD8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="U7V-cz-i31"/>
                             <constraint firstItem="fb7-cc-JD8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ucR-s6-uCG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -57,11 +65,20 @@
                     <connections>
                         <outlet property="mealNameLabel" destination="OiU-hi-c4F" id="XnD-OC-X9s"/>
                         <outlet property="nameTextField" destination="kS7-uv-BeI" id="pUQ-0C-duX"/>
+                        <outlet property="photoImageView" destination="Xpf-mD-pUK" id="JKW-Fv-xHk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Dnf-1H-2vj">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="9av-D7-4Tp"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="defaultPhoto" width="1280" height="800"/>
+    </resources>
 </document>
